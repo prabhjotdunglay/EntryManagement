@@ -7,15 +7,15 @@
 
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Raleway" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="{!! asset('css/bootstrap.css') !!}">
+    <link rel="stylesheet" href="{!! asset('css/animate.css') !!}">
+    <link rel="stylesheet" href="{!! asset('css/owl.carousel.min.css') !!}">
 
-    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
-    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{!! asset('fonts/ionicons/css/ionicons.min.css') !!}">
+    <link rel="stylesheet" href="{!! asset('fonts/fontawesome/css/font-awesome.min.css') !!}">
 
     <!-- Theme Style -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="{!! asset('css/styles.css') !!}">
 </head>
 <body>
 
@@ -23,7 +23,7 @@
 
     <nav class="navbar navbar-expand-md navbar-dark bg-light">
         <div class="container">
-            <a href="/visitor" class="navbar-brand"><img src="images/eventimg/logo.png"></a>
+            <a href="/visitor" class="navbar-brand"><img src="{!! asset('images/eventimg/logo.png') !!} "></a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -43,8 +43,7 @@
     </nav>
 </header>
 <!-- END header -->
-
-<section class="site-hero overlay" data-stellar-background-ratio="0.5" style="background-image: url(images/visitor/big_image_1.jpg);">
+<section class="site-hero overlay" data-stellar-background-ratio="0.5" style="background-image: url({!!asset('images/visitor/big_image_1.jpg')!!});">
     <div class="container">
         <div class="row align-items-center site-hero-inner justify-content-center">
             <div class="col-md-8 text-center">
@@ -56,59 +55,67 @@
                         @endforeach
                     @endif
 
-                <div class="mb-5 element-animate">
-                    <h1>Welcome Visitor.</h1>
-                    <p>Please fill the details</p>
-                </div>
+                    <div class="mb-5 element-animate">
+                        <h1>Welcome Visitor.</h1>
+                        <p>Please fill the details</p>
+                    </div>
+                    <div  class="mb-5">
+                        <h3><i> 
+                            @if($Status)
+                                        <p style="color:red;">{{ $Status }}</p></i>
+                            @endif
+                            
+                        </h3>
+                        
+                    </div>
 
-                <form class="form-group element-animate" >
-                    <input type="text"  name ="name" id="name" placeholder="Enter Name" >
-                    <input type="text" name="email"   placeholder="Enter Email" >
-                    <input type="number" name="otp"  placeholder="Enter OTP" >
-                    <input type="text"  name="code"  placeholder="Enter Code" >
-                    <input type="hidden"  name="phone"  value="{{$phone}}" >
+                    <div class="form-group element-animate" >
+
+                        <input type="text"  name ="name" id="name" placeholder="Enter Name" >
+                        <input type="text" name="email"   placeholder="Enter Email" >
+                        <input type="number" name="otp"  placeholder="Enter OTP" >
+                        <input type="text"  name="code"  placeholder="Enter Code" >
+                        <input type="hidden"  name="phone"  value="{{$phone}}" >
+                    </div>
 
 
                     <div class="form-group element-animate" >
-                    <div class="form-group">
-                        <p><strong>Upload Picture</strong></p>
-                        <select name = "upload" id = "upload">
-                            <option value = "Choose Company">Open Webcam</option>
-                        </select>
+                            <div class="form-group">
+                                <p><strong>Upload Picture</strong></p>
+                                <select name = "upload" id = "upload">
+                                    <option value = "Choose Company">Open Webcam</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+
+                                <label>Choose Department</label>
+                                <select class="form-control" id="departmentname" name="departmentname" >
+                                    @foreach($department as $depar)
+
+                                        <option>{{$depar->departmentname}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                             <div class="form-group">
+
+                                <label>Whom to meet</label>
+                                <select class="form-control" id="employeename" name="employeename" >
+                                    @foreach($employee as $emp)
+                                        <option>{{$emp->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                            
                     </div>
-
-                            <label>Choose Department</label>
-                            <select class="form-control" id="departmentname" name="departmentname" >
-                                @foreach($department as $depar)
-
-                                    <option>{{$depar->departmentname}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-
-                            <label>Whom to meet</label>
-                            <select class="form-control" id="employeename" name="employeename" >
-                                @foreach($employee as $emp)
-                                    <option>{{$emp->name}}</option>
-                                @endforeach
-                            </select>
-
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                        <h3><i> @if(session('Status'))
-                                    <p>{{session('Status')}}</p></i>
-                            @endif</h3>
-
-
-
-                </div>
                 </form>
-
-                </div>
+            </div>
+        </div>
     </div>
-
-
-
-
 </section>
 <!-- END section -->
 
@@ -119,16 +126,16 @@
 <!-- loader -->
 <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
 
-<script src="js/jss/jquery-3.2.1.min.js"></script>
-<script src="js/jss/jquery-migrate-3.0.0.js"></script>
-<script src="js/jss/popper.min.js"></script>
-<script src="js/jss/bootstrap.min.js"></script>
-<script src="js/jss/owl.carousel.min.js"></script>
-<script src="js/jss/jquery.waypoints.min.js"></script>
-<script src="js/jss/jquery.stellar.min.js"></script>
+<script src="{!! asset('js/jss/jquery-3.2.1.min.js') !!} "></script>
+<script src="{!! asset('js/jss/jquery-migrate-3.0.0.js') !!} "></script>
+<script src="{!! asset('js/jss/popper.min.js') !!} "></script>
+<script src="{!! asset('js/jss/bootstrap.min.js') !!} "></script>
+<script src="{!! asset('js/jss/owl.carousel.min.js') !!} "></script>
+<script src="{!! asset('js/jss/jquery.waypoints.min.js') !!} "></script>
+<script src="{!! asset('js/jss/jquery.stellar.min.js') !!} "></script>
 
 
 
-<script src="js/jss/main.js"></script>
+<script src="{!! asset('js/jss/main.js') !!} "></script>
 </body>
 </html>

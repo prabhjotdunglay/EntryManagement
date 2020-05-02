@@ -21,7 +21,20 @@ class VisitorController extends Controller
 
     public function index()
     {
-        return view('/visitor');
+        
+    }
+
+    public function visitor_extra_details($phone=0){
+
+        if(!$phone){
+            return redirect()->route('visitor.new');
+        }
+
+        $employee = Employee::all();
+        $department = Department::all();
+
+        return view('newvisitor')->with('phone',$phone)->with('department', $department)->with('employee', $employee);
+
     }
 
     /**
@@ -31,7 +44,7 @@ class VisitorController extends Controller
      */
     public function create()
     {
-        //
+        return view('/visitor');
     }
 
     /**
@@ -53,8 +66,7 @@ class VisitorController extends Controller
 
         $visit->save();
 
-        $employee = Employee::all();
-        $department = Department::all();
+       
         $url="http://my.msgwow.com/api/otp.php";
         $postData = array(
             'authkey' => "$this->authkey_message",
@@ -67,7 +79,9 @@ class VisitorController extends Controller
         $paramArr['postData'] = $postData;
         $this->sendRequest($paramArr);
 
-        return view('/newvisitor')->with('phone',$phone)->with('department', $department)->with('employee', $employee);
+        //
+
+        return redirect()->route('visitor.extra_details', ['phone'=>$phone]);
 
         //pass phone number field with help of compact
     }
@@ -127,11 +141,11 @@ class VisitorController extends Controller
                 $departme->department_id = $request->department_id;
                 $departme->employee_id = $request->employee_id;
                     $departme->save();
-//                $departments = Department::select('id','name')
-//                    ->where('company_id', $this->company_id() )->get();
-//                $employees = Employee::select('id','name','department_id')
-//                    ->where('company_id', $this->company_id())
-//                    ->get();
+       //                $departments = Department::select('id','name')
+        //                    ->where('company_id', $this->company_id() )->get();
+        //                $employees = Employee::select('id','name','department_id')
+        //                    ->where('company_id', $this->company_id())
+            //                    ->get();
                 $visitor->otp_verified = 1;
 
                 if($visitor->save()){
@@ -142,7 +156,12 @@ class VisitorController extends Controller
 
             }
             else{
-                return view('newvisitor')->with('Status', 'Details not matched');
+                
+                 $employee = Employee::all();
+                $department = Department::all();
+
+
+                return view('newvisitor')->with('phone',$request->phone)->with('department', $department)->with('employee', $employee)->with('Status', 'Details not matched');
             }
 
         }

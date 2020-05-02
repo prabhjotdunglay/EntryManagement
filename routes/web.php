@@ -42,8 +42,13 @@ Route::resource('/reception','ReceptionController');
 Route::resource('/license','LicenseController');
 Route::get('/enquiry', 'LeadsController@enquiry');
 
-Route::post('newvisitor', 'VisitorController@send')->name('visitor.send');
-Route::resource('/visitor','VisitorController');
+Route::post('sendotp', 'VisitorController@send')->name('visitor.send');
+
+Route::get('visitor_extra_details/{phone?}', 'VisitorController@visitor_extra_details')->name('visitor.extra_details');
+
+//Route::resource('/visitor','VisitorController');
+Route::get('/visitor','VisitorController@create')->name('visitor.new');
+Route::post('/visitor','VisitorController@store')->name('visitor.store');
 
 
 Route::get('/returningvisitor', function () {
