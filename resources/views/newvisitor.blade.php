@@ -60,13 +60,13 @@
                         <p>Please fill the details</p>
                     </div>
                     <div  class="mb-5">
-                        <h3><i> 
-                            @if($Status)
+                        <h3><i>
+                           {{-- @if($Status)
                                         <p style="color:red;">{{ $Status }}</p></i>
                             @endif
-                            
+                            --}}
                         </h3>
-                        
+
                     </div>
 
                     <div class="form-group element-animate" >
@@ -110,7 +110,7 @@
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
-                            
+
                     </div>
                 </form>
             </div>
