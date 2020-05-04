@@ -71,11 +71,11 @@
 
                     <div class="form-group element-animate" >
 
-                        <input type="text"  name ="name" id="name" placeholder="Enter Name" >
-                        <input type="text" name="email"   placeholder="Enter Email" >
-                        <input type="number" name="otp"  placeholder="Enter OTP" >
-                        <input type="text"  name="code"  placeholder="Enter Code" >
-                        <input type="hidden"  name="phone"  value="{{$phone}}" >
+                        <input type="text"  name ="name" id="name" placeholder="Enter Name" required >
+                        <input type="email" name="email" id="email"  placeholder="Enter Email" required >
+                        <input type="number" name="otp" id="otp" placeholder="Enter OTP" required>
+                        <input type="text"  name="code" id="code"  placeholder="Enter Code" required>
+                        <input type="hidden"  name="phone" id="phone" value="{{$phone}}" >
                     </div>
 
 
@@ -89,10 +89,12 @@
                             <div class="form-group">
 
                                 <label>Choose Department</label>
-                                <select class="form-control" id="departmentname" name="departmentname" >
+                                <select class="form-control" name="departmentname" >
                                     @foreach($department as $depar)
 
-                                        <option>{{$depar->departmentname}}</option>
+                                        <option value = "{{$depar->id}}"> {{$depar->departmentname}}</option>
+
+
                                     @endforeach
                                 </select>
                             </div>
@@ -100,9 +102,9 @@
                              <div class="form-group">
 
                                 <label>Whom to meet</label>
-                                <select class="form-control" id="employeename" name="employeename" >
+                                <select class="form-control" name="employeename" >
                                     @foreach($employee as $emp)
-                                        <option>{{$emp->name}}</option>
+                                        <option value ="{{$emp->id}}">{{$emp->name}}</option>
                                     @endforeach
                                 </select>
                             </div>

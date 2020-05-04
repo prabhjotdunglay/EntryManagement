@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Code;
 use App\Department;
 use App\Employee;
+use Auth;
 use App\Visitor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class VisitorController extends Controller
 
@@ -21,7 +24,7 @@ class VisitorController extends Controller
 
     public function index()
     {
-        
+
     }
 
     public function visitor_extra_details($phone=0){
@@ -66,7 +69,7 @@ class VisitorController extends Controller
 
         $visit->save();
 
-       
+
         $url="http://my.msgwow.com/api/otp.php";
         $postData = array(
             'authkey' => "$this->authkey_message",
@@ -126,47 +129,48 @@ class VisitorController extends Controller
         $this->validate($request,[
             'phone' => 'string',
             'otp' => 'numeric',
+            'code' => 'string',
         ]);
 
         $visitor = Visitor::where('phone',$request->phone)->where('otp',$request->otp)->first();
 
+
+
         // For Verify otp
-        if(isset($request->otp))
-        {
-            if($request->otp == isset($visitor->otp))
-            {
+        if(isset($request->otp)) {
+            if ($request->otp == isset($visitor->otp) &&(Code::where('code','=', Input::get('code'))->exists())) {
 
-                $departme = new Visitor();
-                $departme->company_id = $request->company_id;
-                $departme->department_id = $request->department_id;
-                $departme->employee_id = $request->employee_id;
-                    $departme->save();
-       //                $departments = Department::select('id','name')
-        //                    ->where('company_id', $this->company_id() )->get();
-        //                $employees = Employee::select('id','name','department_id')
-        //                    ->where('company_id', $this->company_id())
-            //                    ->get();
-                $visitor->otp_verified = 1;
+            $code = Code::where('code','=' , $request->code)->firstOrFail();
+                if($code->Used == false){
+                    $code->Used = 1;
+                    $visitor->otp_verified = 1;
+                    $visitor->name = $request->name;
+                    $visitor->email = $request->email;
+                    $visitor->department_id = $request->departmentname;
+                    $visitor->employee_id = $request->employeename;
+                    $visitor->code = $request->code;
+                    $visitor->company_id = Auth::guard('hello')->id();
 
-                if($visitor->save()){
+                    $code->save();
+                    $visitor->save();
                     return view('/thankyou');
-                }else{
-                    return redirect('/visitor')->with('Status', 'Details not matched');
+
                 }
-
+                elseif($code->Used == true)  {
+                    return redirect('/visitor')->with('Status', 'CODE NUMBER ALREADY USED. Please Contact Employee');
+                }
             }
-            else{
-                
-                 $employee = Employee::all();
-                $department = Department::all();
 
 
-                return view('newvisitor')->with('phone',$request->phone)->with('department', $department)->with('employee', $employee)->with('Status', 'Details not matched');
-            }
+             return redirect('/visitor')->with('Status', 'DETAILS NOT CORRECT');
 
         }
 
-    }
+       else {
+           return redirect('/visitor')->with('Status', 'Details not matched');
+       }
+        }
+
 
     /**
      * Display the specified resource.

@@ -14,13 +14,18 @@
                     <div class="table-responsive">
                         <table class="table">
 
-                            <form>
+                            <form class="form-detail" action={{route('license.store')}} method="post">
+                                @csrf
+                                @if(count($errors)>0)
+                                    @foreach($errors->all() as $error)
+                                        <p class = "alert alert-danger">{{$error}}</p>
+                                    @endforeach
+                                @endif
                                 <div class="form-group">
                                     <label for="">Company Name</label>
-                                    <select name = "constituency" id = "constituency">
-                                        <option value = "Choose Company">Choose Company</option>
+                                    <select name="id" >
                                         @foreach($user as $usr)
-                                        <option value = "{{$usr->name}}">{{$usr->name}}</option>
+                                        <option value = "{{$usr->id}}">{{$usr->name}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -36,9 +41,11 @@
 
                                 <div class="form-row-last">
                                     <input type="submit" name="register" class="btn btn-primary" value="Submit">
-
+                                    @if(session('Status'))
+                                        <p>{{session('Status')}}</p>
+                                    @endif
                                 </div>
-                                <form>
+                                </form>
                     </div>
                 </div>
             </div>

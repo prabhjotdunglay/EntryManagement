@@ -50,5 +50,13 @@ class Reception extends Authenticatable
         return $this->belongsTo(Department::class);
     }
 
+    public function visitor()
+    {
+        return $this->hasMany(Visitor::class);
+    }
+    public function receptionist()
+    {
+        return $this->hasOne(Reception::class);
+    }
 
 }

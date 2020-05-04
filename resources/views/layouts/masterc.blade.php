@@ -413,6 +413,25 @@ License: You must have a valid license purchased only from themeforest(the above
                                 View All Black List Visitor</a>
                         </li>
                     </ul>
+
+                <li>
+                    <a href="javascript:;">
+                        <i class="icon-briefcase"></i>
+                        <span class="title">Generate Visitor Code</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="{{route('code.create')}}">
+                                Generate Code</a>
+                        </li>
+                        <li>
+                            <a href="{{route('code.index')}}">
+                                View All Code</a>
+                        </li>
+                    </ul>
+
+
                 <!-- END ANGULARJS LINK -->
 {{--                <li class="heading">--}}
 {{--                    <h3 class="uppercase">Features</h3>--}}

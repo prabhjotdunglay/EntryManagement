@@ -37,6 +37,7 @@ Route::get('/company', function () {
 //admin dashboard
 Route::resource('/company','CompanyController');
 
+Route::resource('/code','CodeController');
 
 Route::resource('/reception','ReceptionController');
 Route::resource('/license','LicenseController');

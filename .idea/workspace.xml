@@ -2,10 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4a17966-c46c-4b2d-a03f-0ccb5419a910" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/custom/code.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/custom/codes.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LicenseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LicenseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReceptionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReceptionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VisitorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VisitorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Reception.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Reception.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Visitor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Visitor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/license.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/license.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/masterc.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/masterc.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/newvisitor.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/newvisitor.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/thankyou.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/thankyou.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/visitor.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/visitor.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -188,7 +200,7 @@
       <workItem from="1587330192227" duration="7660000" />
       <workItem from="1587597647652" duration="11685000" />
       <workItem from="1587852818502" duration="53953000" />
-      <workItem from="1588412567433" duration="535000" />
+      <workItem from="1588412567433" duration="22694000" />
     </task>
     <servers />
   </component>

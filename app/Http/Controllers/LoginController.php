@@ -14,6 +14,7 @@ class LoginController extends Controller
         if(Auth::check()) {
             return redirect ('/')->with('Status', 'You are already logged In');
         } else {
+
             return view ('custom.login');
         }
 
@@ -29,10 +30,14 @@ class LoginController extends Controller
         ]);
 
         $remember = $request->get('remember');
-
         // code to be executed if this condition is true;
+        $ldat = date('Y-m-d');
 
 
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $remember) && (Auth::user()->expiry < $ldat)) {
+            auth()->logout();
+            return redirect('/login')->with('Status', 'Account Expired Please Contact Admin');
+        }
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $remember) && ('admin' == Auth::user()->usertype)) {
             return redirect('admin');
         }

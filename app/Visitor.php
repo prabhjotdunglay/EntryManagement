@@ -12,7 +12,6 @@ class Visitor extends Model
         return $this->belongsTo('App\User');
     }
 
-
     public function department(){
         return $this->belongsTo('App\Department');
     }

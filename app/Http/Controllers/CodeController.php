@@ -1,29 +1,23 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\User;
-use App\Reception;
-use Illuminate\Http\Request;
 
-class ReceptionController extends Controller
+use Illuminate\Http\Request;
+use App\Code;
+
+class CodeController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-
     public function index()
-
-        {
-            $user = Reception::all();
-
-            return view('admin.receptionists', compact('user'));
-
-
-        }
-
+    {
+        $code = Code::all();
+        //$depart = Department::paginate(10);
+        return view('custom.codes',compact('code'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -32,10 +26,8 @@ class ReceptionController extends Controller
      */
     public function create()
     {
-        $user = User::all();
 
-        return view('admin.reception', compact('user'));
-
+        return view('custom.code');
 
     }
 
@@ -47,35 +39,21 @@ class ReceptionController extends Controller
      */
     public function store(Request $request)
     {
-
         $this->validation($request);
-        $request['password'] = bcrypt($request->password); //hashing password
+        $code = new Code();
+        $code->code = $request->code;
 
-//        $reception = Reception::find($request->id);
-//        Reception::create($request->all());
-//        return $reception;
-        $reception = new Reception();
-        $reception->companyname =$request->companyname;
-        $reception->email = $request->email;
-        $reception->password = $request->password;
-        //$reception->user_id = $request->id;
-        $reception->save();
-        return redirect('reception/create')->with('Status', 'SUCCESS: You have registered company reception');
+        $code->save();
 
-        //return $request->all();
-
+        return redirect("/code/create")->with('Status', 'SUCCESS: You have generated a code. Please share with your visitor.');
     }
-
 
     public function validation($request){
 
         return $this->validate($request, [
-            'companyname' => 'required|max:255',
-            'email' => 'required|email|unique:users|max:255',
-            'password' => 'required|max:255',
+            'code' => 'required|max:255',
 
         ]);
-
 
     }
     /**

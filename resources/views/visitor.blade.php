@@ -59,7 +59,7 @@
                     </div>
 
                     <div class="form-inline element-animate" id="search-form">
-                        <input type="tel" class="form-control form-control-block search-input" name="phone" id="autocomplete" placeholder="Enter Mobile Number" required >
+                        <input type="tel" class="form-control form-control-block search-input" name="phone" id="autocomplete" placeholder="+91 Enter Mobile Number" required >
                         <button type="submit" class="btn btn-primary">Submit</button>
                         <h3><i> @if(session('Status'))
                                     <p>{{session('Status')}}</p></i>

@@ -35,7 +35,11 @@ class LicenseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = User::find($request->id);
+        $user->expiry = $request->date;
+        $user->save();
+        return redirect('/license/create')->with('Status', 'SUCCESS: You have assigned license');
+
     }
 
     /**
@@ -69,7 +73,8 @@ class LicenseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+
     }
 
     /**
