@@ -55,10 +55,10 @@ class ReceptionController extends Controller
 //        Reception::create($request->all());
 //        return $reception;
         $reception = new Reception();
-        $reception->companyname =$request->companyname;
+       // $reception->companyname =$request->companyname;
         $reception->email = $request->email;
         $reception->password = $request->password;
-        //$reception->user_id = $request->id;
+        $reception->user_id = $request->id;
         $reception->save();
         return redirect('reception/create')->with('Status', 'SUCCESS: You have registered company reception');
 
@@ -70,7 +70,7 @@ class ReceptionController extends Controller
     public function validation($request){
 
         return $this->validate($request, [
-            'companyname' => 'required|max:255',
+            'id' => 'required|max:255',
             'email' => 'required|email|unique:users|max:255',
             'password' => 'required|max:255',
 

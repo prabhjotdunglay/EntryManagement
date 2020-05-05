@@ -50,7 +50,10 @@ Route::get('visitor_extra_details/{phone?}', 'VisitorController@visitor_extra_de
 //Route::resource('/visitor','VisitorController');
 Route::get('/visitor','VisitorController@create')->name('visitor.new');
 Route::post('/visitor','VisitorController@store')->name('visitor.store');
+Route::get('/about', function(){
 
+    return 'about';
+});
 
 Route::get('/returningvisitor', function () {
     return view('returningvisitor');

@@ -2,22 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4a17966-c46c-4b2d-a03f-0ccb5419a910" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/custom/code.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/custom/codes.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/php-test-framework.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LicenseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LicenseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReceptionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReceptionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VisitorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VisitorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Reception.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Reception.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Visitor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Visitor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/license.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/license.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/masterc.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/masterc.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/newvisitor.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/newvisitor.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/thankyou.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/thankyou.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_25_012251_create_receptions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_25_012251_create_receptions_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/reception.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/reception.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/visitor.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/visitor.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.3">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
       <path value="$PROJECT_DIR$/vendor/phar-io/version" />
@@ -133,9 +125,11 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -164,8 +158,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.newvisitor.blade.php">
-    <configuration name="newvisitor.blade.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/finalyear/resources/views/newvisitor.blade.php" useBuiltInWebServerPort="true">
+  <component name="RunManager" selected="PHPUnit.AppTest.testuserisnotadmin">
+    <configuration name="AppTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\AppTest" file="$PROJECT_DIR$/tests/Unit/AppTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="AppTest.testExample" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\AppTest" file="$PROJECT_DIR$/tests/Unit/AppTest.php" method="testExample" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="AppTest.testuserisadmin" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\AppTest" file="$PROJECT_DIR$/tests/Unit/AppTest.php" method="testuserisadmin" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="AppTest.testuserisnotadmin" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\AppTest" file="$PROJECT_DIR$/tests/Unit/AppTest.php" method="testuserisnotadmin" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="AppTest.testusernotempty" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\AppTest" file="$PROJECT_DIR$/tests/Unit/AppTest.php" method="testusernotempty" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -174,7 +185,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.newvisitor.blade.php" />
+        <item itemvalue="PHPUnit.AppTest.testuserisnotadmin" />
+        <item itemvalue="PHPUnit.AppTest.testuserisadmin" />
+        <item itemvalue="PHPUnit.AppTest" />
+        <item itemvalue="PHPUnit.AppTest.testusernotempty" />
+        <item itemvalue="PHPUnit.AppTest.testExample" />
       </list>
     </recent_temporary>
   </component>
@@ -200,7 +215,8 @@
       <workItem from="1587330192227" duration="7660000" />
       <workItem from="1587597647652" duration="11685000" />
       <workItem from="1587852818502" duration="53953000" />
-      <workItem from="1588412567433" duration="22694000" />
+      <workItem from="1588412567433" duration="23020000" />
+      <workItem from="1588628799226" duration="6604000" />
     </task>
     <servers />
   </component>

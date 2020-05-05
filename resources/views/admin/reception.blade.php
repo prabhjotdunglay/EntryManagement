@@ -24,10 +24,10 @@
                             <form>
                                 <div class="form-group">
                                     <label for="">Company Name</label>
-                                    <select name = "companyname" id = "companyname">
+                                    <select name = "id" id = "id">
                                         <option value = "Choose Company">Choose Company</option>
                                         @foreach($user as $usr)
-                                            <option value = "{{$usr->name}}">{{$usr->name}}</option>
+                                            <option value = "{{$usr->id}}">{{$usr->name}}</option>
 
                                         @endforeach
 

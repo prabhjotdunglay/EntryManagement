@@ -15,7 +15,7 @@ class CreateReceptionsTable extends Migration
     {
         Schema::create('receptions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('companyname');
+            //$table->string('companyname');
             $table->string('email')->unique();
             $table->string('password');
         });

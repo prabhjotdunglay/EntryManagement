@@ -33,7 +33,7 @@
                 <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
                     <a class="nav-item">
                         <a class="nav-link active" href="/">Home</a>
-                        <a class="nav-link active">{{ Auth::guard('hello')->user()->companyname }}</a>
+                        {{--<a class="nav-link active">{{ Auth::guard('hello')->user()->companyname }}</a>--}}
 
 
             </div>
