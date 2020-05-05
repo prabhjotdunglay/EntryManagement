@@ -130,6 +130,7 @@ class VisitorController extends Controller
             'phone' => 'string',
             'otp' => 'numeric',
             'code' => 'string',
+            'purpose' => 'string',
         ]);
 
         $visitor = Visitor::where('phone',$request->phone)->where('otp',$request->otp)->first();
@@ -148,6 +149,7 @@ class VisitorController extends Controller
                     $visitor->email = $request->email;
                     $visitor->department_id = $request->departmentname;
                     $visitor->employee_id = $request->employeename;
+                    $visitor->purpose = $request->purpose;
                     $visitor->code = $request->code;
                     $visitor->company_id = Auth::guard('hello')->id();
 

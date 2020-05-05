@@ -231,25 +231,21 @@ License: You must have a valid license purchased only from themeforest(the above
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="ecommerce_index.html">
+                            <a href="/allvisitors">
                                 <i class="icon-home"></i>
                                 Real Time Visitor</a>
                         </li>
                         <li>
-                            <a href="ecommerce_orders.html">
+                            <a href="/visitors/department">
                                 <i class="icon-basket"></i>
                                 By Department</a>
                         </li>
                         <li>
-                            <a href="ecommerce_orders_view.html">
+                            <a href="/visitors/employee">
                                 <i class="icon-tag"></i>
                                 By Employee</a>
                         </li>
-                        <li>
-                            <a href="ecommerce_products.html">
-                                <i class="icon-handbag"></i>
-                                By Location</a>
-                        </li>
+
 
                     </ul>
                 </li>
@@ -417,7 +413,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 <li>
                     <a href="javascript:;">
                         <i class="icon-briefcase"></i>
-                        <span class="title">Generate Visitor Code</span>
+                        <span class="title">Expected Visitor Code</span>
                         <span class="arrow "></span>
                     </a>
                     <ul class="sub-menu">

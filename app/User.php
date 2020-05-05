@@ -37,13 +37,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function receptionist()
+    public function reception()
     {
-        return $this->hasOne(Reception::class);
+        return $this->hasMany('App\Reception');
     }
     public function visitor()
     {
-        return $this->hasMany(Visitor::class);
+        return $this->hasMany('App\Visitor');
     }
 
 }

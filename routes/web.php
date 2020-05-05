@@ -62,6 +62,10 @@ Route::get('/thankyou', function () {
     return view('thankyou');
 });
 
+
 //customer dashboard
 Route::resource('/department','DepartmentController');
 Route::resource('/employee','EmployeeController');
+Route::get('/allvisitors','ReportsController@index');
+Route::get('/visitors/department','ReportsController@department');
+Route::get('/visitors/employee','ReportsController@employee');

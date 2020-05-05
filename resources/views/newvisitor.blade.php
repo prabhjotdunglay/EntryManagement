@@ -108,7 +108,10 @@
                                     @endforeach
                                 </select>
                             </div>
+                        <div class="form-group element-animate" >
 
+                            <input type="text"  name ="purpose" id="purpose" placeholder="Enter purpose" required >
+                        </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </div>

@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4a17966-c46c-4b2d-a03f-0ccb5419a910" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/php-test-framework.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReceptionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReceptionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_25_012251_create_receptions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_25_012251_create_receptions_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/reception.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/reception.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/visitor.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/visitor.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VisitorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VisitorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Visitor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Visitor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/masterc.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/masterc.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/newvisitor.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/newvisitor.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -216,7 +215,7 @@
       <workItem from="1587597647652" duration="11685000" />
       <workItem from="1587852818502" duration="53953000" />
       <workItem from="1588412567433" duration="23020000" />
-      <workItem from="1588628799226" duration="6604000" />
+      <workItem from="1588628799226" duration="11189000" />
     </task>
     <servers />
   </component>
