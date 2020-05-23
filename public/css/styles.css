@@ -4,7 +4,7 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.8;
-  color: #6c757d;
+  color: #cdff00;
 }
 
 a {
@@ -632,7 +632,7 @@ textarea.form-control {
 }
 
 .owl-carousel.major-caousel .owl-nav .owl-prev:hover, .owl-carousel.major-caousel .owl-nav .owl-prev:focus, .owl-carousel.major-caousel .owl-nav .owl-next:hover, .owl-carousel.major-caousel .owl-nav .owl-next:focus {
-  color: #6c757d;
+  color: #cdff00;
   outline: none;
 }
 

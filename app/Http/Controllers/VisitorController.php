@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Code;
 use App\Department;
 use App\Employee;
+use App\Reception;
 use Auth;
 use App\Visitor;
 use Illuminate\Http\Request;
@@ -33,8 +34,15 @@ class VisitorController extends Controller
             return redirect()->route('visitor.new');
         }
 
-        $employee = Employee::all();
-        $department = Department::all();
+
+        $user = Auth::guard('hello')->id();
+        $reception = Reception::where('id', '=', $user)->first();
+        $department = Department::where('company_id','=', $reception->user_id)->get();
+        //dd ([$user,$reception,$department]);
+        $company_id= $reception->user_id;
+        $employee = Employee::where('company_id', $company_id)->get();
+       // $employee = Employee::all();
+        //dd([$user, $reception->user_id, $visitor]);
 
         return view('newvisitor')->with('phone',$phone)->with('department', $department)->with('employee', $employee);
 

@@ -82,7 +82,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                         <i class="icon-bell"></i>
                         <span class="badge badge-default">
-					7 </span>
+					1 </span>
                     </a>
                     <ul class="dropdown-menu">
                         <li class="external">
@@ -92,7 +92,7 @@ License: You must have a valid license purchased only from themeforest(the above
                         <li>
                             <ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
                                 <li>
-                                    <a href="javascript:;">
+                                    <a href="/allvisitors">
                                         <span class="time">just now</span>
                                         <span class="details">
 									<span class="label label-sm label-icon label-success">
@@ -125,32 +125,10 @@ License: You must have a valid license purchased only from themeforest(the above
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-default">
-                        <li>
-                            <a href="extra_profile.html">
-                                <i class="icon-user"></i> My Profile </a>
-                        </li>
-                        <li>
-                            <a href="page_calendar.html">
-                                <i class="icon-calendar"></i> My Calendar </a>
-                        </li>
-                        <li>
-                            <a href="inbox.html">
-                                <i class="icon-envelope-open"></i> My Inbox <span class="badge badge-danger">
-							3 </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="page_todo.html">
-                                <i class="icon-rocket"></i> My Tasks <span class="badge badge-success">
-							7 </span>
-                            </a>
-                        </li>
+
                         <li class="divider">
                         </li>
-                        <li>
-                            <a href="extra_lock.html">
-                                <i class="icon-lock"></i> Lock Screen </a>
-                        </li>
+
                         <li>
                             <a href="logout">
                                 <i class="icon-key"></i> Log Out </a>
@@ -160,11 +138,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 <!-- END USER LOGIN DROPDOWN -->
                 <!-- BEGIN QUICK SIDEBAR TOGGLER -->
                 <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-                <li class="dropdown dropdown-quick-sidebar-toggler">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <i class="icon-logout"></i>
-                    </a>
-                </li>
+
                 <!-- END QUICK SIDEBAR TOGGLER -->
             </ul>
         </div>
@@ -216,7 +190,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     <!-- END RESPONSIVE QUICK SEARCH FORM -->
                 </li>
                 <li class="start ">
-                    <a href="javascript:;">
+                    <a href="/customer">
                         <i class="icon-home"></i>
                         <span class="title">Dashboard</span>
 
@@ -224,7 +198,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
                 </li>
                 <li>
-                    <a href="javascript:;">
+                    <a href="/customer">
                         <i class="icon-basket"></i>
                         <span class="title">Visitor Reports</span>
                         <span class="arrow "></span>

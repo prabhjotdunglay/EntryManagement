@@ -31,9 +31,7 @@ Route::get('customer','DashboardController@customer')->middleware('auth');
 Route::get('forgot_password' , 'ForgotPassword@forgot')->name('forgot_password');
 Route::post('forgot_password' , 'ForgotPassword@password');
 Route::get('reset_password/{email}/{code}', 'ForgotPassword@reset')->name('reset_password');
-Route::get('/company', function () {
-    return view('admin.company');
-});
+
 //admin dashboard
 Route::resource('/company','CompanyController');
 

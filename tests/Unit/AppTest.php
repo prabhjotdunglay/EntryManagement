@@ -35,7 +35,7 @@ class AppTest extends TestCase
     {
         $user= User::create(['name' =>'hello', 'email'=>'81@gmail.com','password'=>'secret' ]);
 
-        $type = 'admin';
+        $type = 'notadmin';
         $this->assertNotEquals($type,$user->usertype);
     }
 

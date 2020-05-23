@@ -79,22 +79,11 @@
                     </div>
 
 
-                    <div class="form-group element-animate" >
-                            <div class="form-group">
-                                <p><strong>Upload Picture</strong></p>
-                                <select name = "upload" id = "upload">
-                                    <option value = "Choose Company">Open Webcam</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-
-                                <label>Choose Department</label>
-                                <select class="form-control" name="departmentname" >
-                                    @foreach($department as $depar)
-
-                                        <option value = "{{$depar->id}}"> {{$depar->departmentname}}</option>
-
-
+                    <div class="form-group">
+                        <label>Choose Department</label>
+                        <select class="form-control" name="departmentname" >
+                            @foreach($department as $depar)
+                                <option value = "{{$depar->id}}"> {{$depar->departmentname}}</option>
                                     @endforeach
                                 </select>
                             </div>

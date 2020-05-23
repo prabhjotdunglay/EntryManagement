@@ -49,17 +49,8 @@ var Layout = function() {
     };
 
     var handleHeaderMenu = function() {
-        $('.page-header .navbar-nav > .dropdown-fw, .page-header .navbar-nav > .more-dropdown, .page-header .navbar-nav > .dropdown > .dropdown-menu  > .dropdown').click(function(e) {
-            
-            if (Metronic.getViewPort().width > resBreakpointMd) {
-                if ($(this).hasClass('more-dropdown') || $(this).hasClass('more-dropdown-sub')) {
-                    return;
-                } else {
-                     e.stopPropagation();
-                }
-            } else {
-                e.stopPropagation();
-            }
+        $('.page-header .navbar-nav > .dropdown, .page-header .navbar-nav > .dropdown > .dropdown-menu  > .dropdown').click(function(e) {
+            e.stopPropagation();
             
             var links = $(this).parent().find('> .dropdown');
 
@@ -79,10 +70,6 @@ var Layout = function() {
                 $(this).addClass('open');
                 Metronic.scrollTo($(this));
             }
-        });
-
-        $('.page-header .navbar-nav .more-dropdown-sub .dropdown-menu, .page-header .navbar-nav .dropdown-sub .dropdown-menu').click(function(){
-
         });
     };
 

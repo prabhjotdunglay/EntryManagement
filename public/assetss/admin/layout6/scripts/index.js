@@ -1,6 +1,7 @@
 var Index = function () {
 
 	var handleColumnLine = function() {
+		AmCharts.rtl = true;
 		var chart = AmCharts.makeChart("columnLine", {
 		  "type": "serial",
 		  "addClassNames": true,
@@ -87,6 +88,7 @@ var Index = function () {
 	}
 
 	var handleAnimatedPieChart = function() {
+		AmCharts.rtl = true;
 		var chart = AmCharts.makeChart( "animated-pie-chart", {
 		  "type": "pie",
 		  "theme": "light",

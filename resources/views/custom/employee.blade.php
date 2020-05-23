@@ -60,10 +60,10 @@
 
                     <div class="form-group">
                         <label>Department Name</label>
-                        <select class="form-control" id="departmentname" name="departmentname" >
+                        <select class="form-control" name="id" >
                             @foreach($depart as $depar)
-                            <option>{{$depar->departmentname}}</option>
-@endforeach
+                            <option value = "{{$depar->id}}">{{$depar->departmentname}}</option>
+                        @endforeach
                         </select>
                     </div>
 

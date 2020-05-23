@@ -56,7 +56,7 @@
 
                                     </td>
                                     <td>
-                                        5
+                                        {{count($depar->employees)}}
                                     </td>
 
                                 </tr>
@@ -65,7 +65,7 @@
                                 </tbody>
 
                             </table>
-                            {{ $depart->links() }}
+                          {{--  {{ $depart->links() }}--}}
 
                         </div>
                     </div>

@@ -2,16 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Reception;
 use App\User;
+use App\Visitor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReportsController extends Controller
 {
     public function index(){
 
-        $user_id = User
-        $user = User::find('$user_id');
-        return view('allvisitors')->with('visitor', $user->name);
+        $user = Auth::id();
+        $reception = Reception::where('user_id', '=', $user)->first();
+        $visitor = Visitor::where('company_id', '=', $reception->id)->get();
+        //dd([$user, $reception->user_id, $visitor]);
+        return view('allvisitors')->with('visitor', $visitor);
 }
 
     public function department(){

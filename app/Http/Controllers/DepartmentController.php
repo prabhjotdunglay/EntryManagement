@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Department;
 use App\Employee;
+use Illuminate\Support\Facades\Auth;
+
 class DepartmentController extends Controller
 {
     /**
@@ -15,7 +17,8 @@ class DepartmentController extends Controller
     public function index()
     {
         $employee = Employee::all();
-        $depart = Department::paginate(10);
+        $user = Auth::id(); //this returns 1
+        $depart = Department::where('company_id', '=',$user)->get();
         return view('custom.departmenties', compact('depart','employee'));
 
     }
@@ -43,6 +46,7 @@ class DepartmentController extends Controller
         $this->validation($request);
         $department = new Department();
         $department->departmentname = $request->departmentname;
+        $department->company_id =  Auth::id();
         $department->save();
 
         return redirect("/department/create")->with('Status', 'SUCCESS: You have created companies department.');

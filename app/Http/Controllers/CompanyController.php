@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\WelcomeMail;
 class CompanyController extends Controller
 {
     /**
@@ -38,7 +39,11 @@ class CompanyController extends Controller
         $this->validation($request);
         $request['password'] = bcrypt($request->password); //hashing password
 
-        User::create($request->all());
+        $user= User::create($request->all());
+        Mail::to($user)->send(new WelcomeMail($user));
+
+
+
 
         return redirect('/company/create')->with('Status', 'SUCCESS: You have registered company');
         //return $request->all();

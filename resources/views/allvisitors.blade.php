@@ -37,33 +37,39 @@
                                     Name
                                 </th>
                                 <th>
-                                    Phone
-                                </th>
-                                <th>
                                     Email
                                 </th>
                                 <th>
                                     Phone
-
                                 </th>
+                                <th>
+                                    Code
+                                </th>
+
                                 </thead>
+
                                 <tbody>
                                 <tr>
-                                    <td>
-                                        Dakota Rice
-                                    </td>
-                                    <td>
-                                        Niger
-                                    </td>
-                                    <td>
-                                        Oud-Turnhout
-                                    </td>
-                                    <td class="text-right">
-                                        $36,738
-                                    </td>
-                                </tr>
+                                    @foreach($visitor as $visit)
 
+                                    <td>
+
+                                        {{$visit->name}}
+                                    </td>
+                                    <td>
+                                        {{$visit->email}}
+                                    </td>
+                                    <td>
+                                        {{$visit->phone}}
+                                    </td>
+                                        <td>
+                                            {{$visit->code}}
+                                        </td>
+
+                                </tr>
                                 </tbody>
+                                @endforeach
+
                             </table>
                         </div>
                     </div>

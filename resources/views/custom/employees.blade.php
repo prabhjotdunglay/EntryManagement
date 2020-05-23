@@ -48,12 +48,13 @@
                                         {{$employee->name}}
                                     </td>
                                     <td>
-                                        {{$employee->department_name}}
+                                        {{$employee->department->departmentname}}
 
                                     </td>
 
                                 </tr>
                                 @endforeach
+
                                 </tbody>
                             </table>
                         </div>

@@ -14,10 +14,9 @@ class LoginController extends Controller
         if(Auth::check()) {
             return redirect ('/')->with('Status', 'You are already logged In');
         } else {
-
+           // dd('hi');
             return view ('custom.login');
         }
-
 
     }
 

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Employee;
 use App\Department;
+use Illuminate\Support\Facades\Auth;
+
 class EmployeeController extends Controller
 {
     /**
@@ -14,8 +16,11 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $employees = Employee::all();
-        return view('custom.employees',compact('employees'));
+        $user = Auth::id();
+        $employees = Employee::where('employees.company_id','=', $user)
+                    //->join('departments', 'departments.id', 'employees.department_id')
+                    ->get();
+        return view('custom.employees')->with('employees', $employees);
     }
 
     /**
@@ -43,8 +48,8 @@ class EmployeeController extends Controller
         $employee->name = $request->employeename;
         $employee->email = $request->email;
         $employee->phone = $request->phone;
-        $employee->department_name = $request->departmentname;
-
+        $employee->department_id = $request->id;
+        $employee->company_id =  Auth::id();
         $employee->save();
 
         return redirect("/employee/create")->with('Status', 'SUCCESS: You have added employee to a department.');
@@ -56,7 +61,6 @@ class EmployeeController extends Controller
             'employeename' => 'required|max:255',
             'email' => 'required|email|unique:employees|max:255',
             'phone' => 'required|unique:employees|max:15',
-            'departmentname' => 'required|max:1000',
         ]);
 
     }
