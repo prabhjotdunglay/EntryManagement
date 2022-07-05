@@ -118,7 +118,7 @@ var Layout = function () {
         // handle sidebar link click
         $('.page-sidebar').on('click', 'li > a', function (e) {
 
-            if (Metronic.getViewPort().width >= resBreakpointMd && !$('.page-sidebar-menu').attr("data-initialized") && $('body').hasClass('page-sidebar-closed') &&  $(this).parent('li').parent('.page-sidebar-menu').size() === 1) {
+            if ($('body').hasClass('page-sidebar-closed') &&  $(this).parent('li').parent('.page-sidebar-menu').size() === 1) {
                 return;
             }
 
